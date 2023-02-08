@@ -1,0 +1,136 @@
+.hero {
+	/* Pad nav + actual padding */
+	padding-top: calc(80px + 80px);
+
+	background: linear-gradient(282.93deg, #BCD7FF 28.32%, #E1CAFF 84.28%);
+	
+	display: grid;
+	gap: 10px;
+	justify-items: center;
+}
+
+.hero h1, h2 {
+	text-align: center;
+	padding: 0px 20px;
+}
+
+.hero h1 {
+	font-size: 40px;
+}
+
+.hero h2 {
+	font-weight: normal;
+	font-size: 24px;
+	max-width: 640px;
+}
+
+.hero .email-form {
+	display: grid;
+	grid-template-columns: minmax(min-content, 300px) auto;
+	gap: 30px;
+	margin: 50px;
+}
+
+.hero .email-form input, button {
+	font-weight: bold;
+	font-size: 18px;
+	padding: 10px 14px;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+	transition: linear 0.2s;
+	background-color: white;
+}
+
+.hero .email-form input {
+	width: calc(100% - 8px * 2);
+}
+
+.hero .email-form input:focus {
+	outline: none;
+	box-shadow: 0px 0px 10px rgba(60, 138, 255, 0.5);
+}
+
+.hero .email-form input.invalid {
+	box-shadow: 0px 0px 10px rgba(255, 0, 0, 1);
+}
+
+.hero .email-form input:disabled {
+	filter: brightness(0.8);
+}
+
+.hero .email-form input::placeholder {
+	color: rgb(185, 185, 185);
+}
+
+.hero .email-form button {
+	background-color: rgba(60, 138, 255, 1);
+	color: white;
+	padding-left: 30px;
+	padding-right: 30px;
+	transition: 0.1s linear;
+}
+
+.hero .email-form button:hover {
+	cursor: pointer;
+	filter: brightness(0.9);
+}
+
+.hero .email-form button:disabled {
+	filter: brightness(0.7);
+}
+
+.hero .img-container {
+	width: 100%;
+	overflow: hidden;
+}
+
+.hero .img-container img {
+	display: block;
+	width: 100%;
+	min-width: 1000px;
+	max-width: 1300px;
+	margin-left: max(min(0px, calc((100vw - 1000px)/2)), calc((100vw - 1300px)/2));
+	user-select: none;
+}
+
+.marketing-1 {
+	background: url("images/marketing background.png"), linear-gradient(180deg, rgba(60, 138, 255, 0.02) 0%, rgba(60, 138, 255, 0.1) 100%);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: auto 100%;
+	
+	display: grid;
+	grid-template-areas:
+		'title title'
+		'card1 card2';
+	grid-template-rows: min-content auto;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 50px max(calc((100vw - 1000px)/2), 50px);
+	row-gap: 20px;
+	column-gap: 40px;
+}
+
+.marketing-1 h3 {
+	display: block;
+	grid-area: title;
+	font-size: 30px;
+}
+
+.marketing-1 .card {
+	background: white;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px rgba(60, 138, 255, 0.3);
+	padding: 20px;
+
+	/* TEMP */
+	min-height: 300px;
+}
+
+.marketing-1 .card .card-title {
+	font-size: 22px;
+	font-weight: bold;
+	text-align: center;
+}
+
+
