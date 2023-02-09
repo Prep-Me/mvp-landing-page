@@ -31,7 +31,7 @@
 	margin: 50px;
 }
 
-.hero .email-form input, button {
+.hero .email-form input, .hero .email-form button {
 	font-weight: bold;
 	font-size: 18px;
 	padding: 10px 14px;
@@ -82,16 +82,33 @@
 
 .hero .img-container {
 	width: 100%;
+	margin-top: -200px;
+	height: 500px;
 	overflow: hidden;
+	position: relative;
+	pointer-events: none;
+	--scale: 1;
+	--offset: 150px;
 }
 
 .hero .img-container img {
+	--min-width: 1000px;
+	--max-width: 1300px;
+	position: absolute;
+	bottom: 0px;
 	display: block;
 	width: 100%;
-	min-width: 1000px;
-	max-width: 1300px;
-	margin-left: max(min(0px, calc((100vw - 1000px)/2)), calc((100vw - 1300px)/2));
+	min-width: var(--min-width);
+	max-width: var(--max-width);
+	margin-left: max(min(0px, calc((100vw - var(--min-width))/2)), calc((100vw - var(--max-width))/2));
 	user-select: none;
+	transform: scale(var(--scale));
+}
+
+.hero .img-container img.front {
+	--min-width: 400px;
+	--max-width: 600px;
+	transform: scale(var(--scale)) translateY(calc(var(--offset)));
 }
 
 .marketing-1 {
@@ -111,7 +128,7 @@
 	column-gap: 40px;
 }
 
-.marketing-1 h3 {
+.marketing-1 h3, .marketing-2 h3 {
 	display: block;
 	grid-area: title;
 	font-size: 30px;
@@ -133,4 +150,86 @@
 	text-align: center;
 }
 
+.marketing-2 {
+	padding: 50px max(calc((100vw - 1000px)/2), 50px);
+}
 
+.marketing-2 p {
+	margin: 20px 0px;
+	font-size: 18px;
+}
+
+#pricing {
+	background-color: rgba(60, 138, 255, 1);
+	padding: 50px max(calc((100vw - 1000px)/2), 50px);
+	display: grid;
+	grid-template-areas: 
+		'title title title'
+		'card1 card2 card3';
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	margin-bottom: 120px;
+}
+
+#pricing h3 {
+	color: white;
+	font-size: 26px;
+	grid-area: title;
+}
+
+#pricing .price-card {
+	background-color: white;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	margin-bottom: -120px;
+}
+
+#pricing .price-card p.name {
+	color: #515151;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#pricing .price-card p.price {
+	font-weight: bold;
+	font-size: 50px;
+	text-align: center;
+	margin: 15px 0px;
+}
+
+#pricing .price-card p.price.monthly::after {
+	content: " / month";
+	font-weight: bold;
+	font-size: 16px;
+}
+
+#pricing .price-card ul {
+	padding-left: 30px;
+	padding-right: 20px;
+	padding-bottom: 40px;
+}
+
+#pricing .price-card ul li {
+	font-size: 18px;
+}
+
+#pricing .price-card button {
+	color: white;
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+	margin: 0px auto;
+	padding: 8px 25px;
+	border-radius: 10px;
+	border: none;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+	transition: linear 0.2s;
+	background-color: rgba(60, 138, 255, 1);
+}
+
+#pricing .price-card button:hover {
+	cursor: pointer;
+	filter: brightness(0.9);
+}

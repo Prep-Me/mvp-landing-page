@@ -1,4 +1,6 @@
 const url = "https://send.pageclip.co/7A5E2mxhjVipBMIYPlmA2RmtGkLWEGvZ/email-form"
+const nav = document.getElementsByTagName("nav")[0]
+const heroImg = document.getElementsByClassName("img-container")[0]
 
 function post(url, data) {
 	let xhr
@@ -41,4 +43,24 @@ document.getElementById("hero-button").addEventListener("click", () => {
 
 	const data = {email: email}
 	post(url, data)
+})
+
+document.addEventListener("scroll", (e) => {
+	// Nav
+	if (window.scrollY <= 20) {
+		nav.classList.remove("scroll")
+	} else {
+		nav.classList.add("scroll")
+	}
+
+	// Hero Images
+	let imgStyle = ""
+
+	const MAX_SCALE = 1.1
+	imgStyle += `--scale: ${Math.min(MAX_SCALE, 1+(MAX_SCALE-1)*(window.scrollY/350))};`
+
+	const MAX_OFFSET = 75
+	imgStyle += `--offset: ${Math.max(MAX_OFFSET, 150-(MAX_OFFSET)*(window.scrollY/350))}px;`
+
+	heroImg.setAttribute("style", imgStyle)
 })
