@@ -71,6 +71,16 @@ nav a:visited {
 	color: rgb(47, 47, 47);
 }
 
+@media screen and (max-width: 700px) {
+	nav img {
+		height: 25px;
+	}
+
+	nav a {
+		font-size: 18px;
+	}
+}
+
 /* Footer */
 
 footer {

@@ -233,3 +233,16 @@
 	cursor: pointer;
 	filter: brightness(0.9);
 }
+
+@media screen and (max-width: 850px) {
+	#pricing {
+		grid-template-areas: 
+			'title title'
+			'card1 card2';
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	#pricing .price-card:nth-child(3) {
+		display: none;
+	}
+}
