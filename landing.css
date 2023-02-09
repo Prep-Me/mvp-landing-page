@@ -1,3 +1,5 @@
+/* Hero */
+
 .hero {
 	/* Pad nav + actual padding */
 	padding-top: calc(80px + 80px);
@@ -111,6 +113,14 @@
 	transform: scale(var(--scale)) translateY(calc(var(--offset)));
 }
 
+@media screen and (max-width: 850px) {
+	.hero .img-container {
+		height: 400px;
+	}
+}
+
+/* Marketing 1 */
+
 .marketing-1 {
 	background: url("images/marketing background.png"), linear-gradient(180deg, rgba(60, 138, 255, 0.02) 0%, rgba(60, 138, 255, 0.1) 100%);
 	background-repeat: no-repeat;
@@ -149,6 +159,18 @@
 	font-weight: bold;
 	text-align: center;
 }
+
+@media screen and (max-width: 700px) {
+	.marketing-1 {
+		grid-template-areas:
+			'title'
+			'card1'
+			'card2';
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Marketing 2 */
 
 .marketing-2 {
 	padding: 50px max(calc((100vw - 1000px)/2), 50px);
@@ -244,5 +266,15 @@
 
 	#pricing .price-card:nth-child(3) {
 		display: none;
+	}
+}
+
+@media screen and (max-width: 515px) {
+	#pricing {
+		grid-template-areas: 
+			'title'
+			'card1'
+			'card2';
+		grid-template-columns: 1fr;
 	}
 }
