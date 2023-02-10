@@ -115,7 +115,17 @@
 
 @media screen and (max-width: 850px) {
 	.hero .img-container {
-		height: 400px;
+		height: 450px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.hero .img-container img.front {
+		transform: scale(var(--scale)) translateY(calc(var(--offset) - 40px));
+	}
+
+	.hero .email-form button {
+		padding: 10px;
 	}
 }
 

@@ -41,7 +41,7 @@ nav {
 	padding: 20px max(20px, calc(100vw/2 - 1000px/2));
 
 	display: grid;
-	grid-template-columns: auto repeat(4, max-content);
+	grid-template-columns: auto repeat(3, max-content);
 	grid-template-rows: min-content;
 	gap: 30px;
 	align-items: center;

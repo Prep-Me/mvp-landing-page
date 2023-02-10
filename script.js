@@ -4,11 +4,13 @@ const heroImg = document.getElementsByClassName("img-container")[0]
 
 function post(url, data) {
 	let xhr
+
 	if (window.XMLHttpRequest) {
 		xhr = new XMLHttpRequest()
 	} else if (window.ActiveXObject) {
 		xhr = new ActiveXObject("Microsoft.XMLHTTP")
 	}
+
 	xhr.open('POST', url, true)
 	xhr.setRequestHeader('Content-Type', 'application/json')
 	xhr.setRequestHeader("Accept", "application/json")
@@ -53,14 +55,15 @@ document.addEventListener("scroll", (e) => {
 		nav.classList.add("scroll")
 	}
 
-	// Hero Images
+	// Hero Page Cluster
 	let imgStyle = ""
 
-	const MAX_SCALE = 1.1
-	imgStyle += `--scale: ${Math.min(MAX_SCALE, 1+(MAX_SCALE-1)*(window.scrollY/350))};`
-
+	const MAX_SCALE = 1.15
 	const MAX_OFFSET = 75
-	imgStyle += `--offset: ${Math.max(MAX_OFFSET, 150-(MAX_OFFSET)*(window.scrollY/350))}px;`
+
+	imgStyle += `--scale: ${Math.min(MAX_SCALE, 1+(MAX_SCALE-1)*(window.scrollY/400))};`
+
+	imgStyle += `--offset: ${Math.max(MAX_OFFSET, 150-(MAX_OFFSET)*(window.scrollY/400))}px;`
 
 	heroImg.setAttribute("style", imgStyle)
 })
