@@ -67,3 +67,9 @@ document.addEventListener("scroll", (e) => {
 
 	heroImg.setAttribute("style", imgStyle)
 })
+
+for (const arrowButton of document.getElementsByClassName("arrow")) {
+	arrowButton.addEventListener("click", () => {
+		document.getElementById("flipper").classList.toggle("flipped")
+	})
+}

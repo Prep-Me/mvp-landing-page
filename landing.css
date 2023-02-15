@@ -136,16 +136,43 @@
 	background-repeat: no-repeat;
 	background-position: bottom;
 	background-size: auto 100%;
-	
-	display: grid;
-	grid-template-areas:
-		'title title'
-		'card1 card2';
-	grid-template-rows: min-content auto;
-	grid-template-columns: repeat(2, 1fr);
 	padding: 50px max(calc((100vw - 1000px)/2), 50px);
-	row-gap: 20px;
+	position: relative;
+}
+
+.marketing-1 .card-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-areas: 'card1 card2';
 	column-gap: 40px;
+	margin-top: 20px;
+}
+
+.marketing-1 .arrow {
+	display: none;
+	font-family: monospace;
+	position: absolute;
+	padding: 5px;
+	line-height: 30px;
+	height: 30px;
+	width: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	user-select: none;
+	border-radius: 8px;
+	background-color: white;
+	box-shadow: 0px 0px 10px rgba(60, 138, 255, 0.3);
+	top: 50%;
+	cursor: pointer;
+}
+
+.marketing-1 .arrow#left {
+	left: 5px;
+}
+
+.marketing-1 .arrow#right {
+	right: 5px;
 }
 
 .marketing-1 h3, .marketing-2 h3 {
@@ -154,7 +181,7 @@
 	font-size: 30px;
 }
 
-.marketing-1 .card {
+.marketing-1 .card-container .card {
 	background: white;
 	border-radius: 10px;
 	box-shadow: 0px 0px 20px rgba(60, 138, 255, 0.3);
@@ -164,7 +191,7 @@
 	min-height: 300px;
 }
 
-.marketing-1 .card .card-title {
+.marketing-1 .card-container .card .card-title {
 	font-size: 22px;
 	font-weight: bold;
 	text-align: center;
@@ -172,11 +199,39 @@
 
 @media screen and (max-width: 700px) {
 	.marketing-1 {
-		grid-template-areas:
-			'title'
-			'card1'
-			'card2';
-		grid-template-columns: 1fr;
+		perspective: 1000px;
+	}
+
+	.marketing-1 .arrow {
+		display: block;
+	}
+
+	.marketing-1 .card-container {
+		display: block;
+		height: 340px;
+		position: relative;
+		transition: transform 0.8s;
+		transform-style: preserve-3d;
+	}
+
+	.card-container.flipped {
+		transform: rotateY(180deg);
+	}
+
+	.marketing-1 .card-container .card {
+		width: calc(100% - 2*25px);
+		text-align: center;
+		-webkit-backface-visibility: hidden;
+  	backface-visibility: hidden;
+	}
+
+	.marketing-1 .card-container .card.front {
+		position: absolute;
+	}
+
+	.marketing-1 .card-container .card.back {
+		position: absolute;
+		transform: rotateY(180deg);
 	}
 }
 
@@ -215,6 +270,9 @@
 	border-radius: 10px;
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
 	margin-bottom: -120px;
+
+	display: grid;
+	grid-template-rows: min-content min-content auto min-content;
 }
 
 #pricing .price-card p.name {
@@ -279,12 +337,23 @@
 	}
 }
 
-@media screen and (max-width: 515px) {
+@media screen and (max-width: 600px) {
 	#pricing {
 		grid-template-areas: 
 			'title'
 			'card1'
-			'card2';
+			'card2'
+			'card3';
 		grid-template-columns: 1fr;
+		margin-bottom: 0px;
+	}
+
+	#pricing .price-card {
+		max-width: 350px;
+		margin: auto;
+	}
+
+	#pricing .price-card:nth-child(3) {
+		display: block;
 	}
 }
