@@ -127,6 +127,10 @@
 	.hero .email-form button {
 		padding: 10px;
 	}
+
+	.hero .email-form button:disabled {
+		display: none;
+	}
 }
 
 /* Marketing 1 */
@@ -185,7 +189,7 @@
 	background: white;
 	border-radius: 10px;
 	box-shadow: 0px 0px 20px rgba(60, 138, 255, 0.3);
-	padding: 20px;
+	padding: 25px;
 
 	/* TEMP */
 	min-height: 300px;
@@ -241,10 +245,54 @@
 	padding: 50px max(calc((100vw - 1000px)/2), 50px);
 }
 
-.marketing-2 p {
-	margin: 20px 0px;
-	font-size: 18px;
+.marketing-2 .testimonial {
+	box-shadow: 0px 0px 20px rgb(60, 138, 255, 0.3);
+	border-radius: 10px;
+	padding: 15px 20px;
+	margin: 25px 0px;
 }
+
+.marketing-2 .testimonial:nth-child(2n) {
+	margin-right: 20vw;
+}
+
+.marketing-2 .testimonial:nth-child(2n+1) {
+	margin-left: 20vw;
+}
+
+.marketing-2 .testimonial .quote {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.marketing-2 .testimonial .quote::before {
+	content: '“ ';
+	font-size: 30px;
+	line-height: 20px;
+}
+
+.marketing-2 .testimonial .person {
+	text-align: right;
+	margin-left: auto;
+	font-size: 18px;
+	color: #515151;
+}
+
+.marketing-2 .testimonial .person::before {
+	content: "- "
+}
+
+@media screen and (max-width: 700px) {
+	.marketing-2 .testimonial:nth-child(2n) {
+		margin-right: 0;
+	}
+	
+	.marketing-2 .testimonial:nth-child(2n+1) {
+		margin-left: 0;
+	}
+}
+
+/* Pricing */
 
 #pricing {
 	background-color: rgba(60, 138, 255, 1);

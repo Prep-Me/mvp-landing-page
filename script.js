@@ -39,7 +39,7 @@ document.getElementById("hero-button").addEventListener("click", () => {
 		return
 	}
 
-	emailInput.value = "Thank You!"
+	emailInput.value = "Added to waitlist"
 	emailInput.setAttribute("disabled", true)
 	document.getElementById("hero-button").setAttribute("disabled", true)
 
