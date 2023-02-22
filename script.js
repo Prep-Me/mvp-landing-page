@@ -25,26 +25,32 @@ function validateEmail(email) {
 		)
 }
 
-document.getElementById("hero-button").addEventListener("click", () => {
-	const emailInput = document.getElementById("hero-email")
-	const email = emailInput.value
+Array.from(document.getElementsByClassName("email-form")).map(el => {
+	const emailInput = el.children[0]
+	const button = el.children[1]
 
-	if (!validateEmail(email)) {
-		emailInput.classList.add("invalid")
-		const listener = () => {
-			emailInput.classList.remove("invalid")
-			emailInput.removeEventListener("change", listener)
+	button.addEventListener("click", () => {
+		const email = emailInput.value
+
+		if (!validateEmail(email)) {
+			emailInput.classList.add("invalid")
+			const listener = () => {
+				emailInput.classList.remove("invalid")
+				emailInput.removeEventListener("change", listener)
+			}
+			emailInput.addEventListener("change", listener)
+			return
 		}
-		emailInput.addEventListener("change", listener)
-		return
-	}
 
-	emailInput.value = "Added to waitlist"
-	emailInput.setAttribute("disabled", true)
-	document.getElementById("hero-button").setAttribute("disabled", true)
+		emailInput.value = "Added to waitlist"
+		emailInput.setAttribute("disabled", true)
+		button.setAttribute("disabled", true)
 
-	const data = {email: email}
-	post(url, data)
+		const data = {email: email}
+		post(url, data)
+
+		setTimeout(hideModal, 1000);
+	})
 })
 
 document.addEventListener("scroll", (e) => {
@@ -72,4 +78,14 @@ for (const arrowButton of document.getElementsByClassName("arrow")) {
 	arrowButton.addEventListener("click", () => {
 		document.getElementById("flipper").classList.toggle("flipped")
 	})
+}
+
+function showModal() {
+	const modal = document.getElementsByTagName("modal")[0]
+	modal.classList.remove("hidden")
+}
+
+function hideModal() {
+	const modal = document.getElementsByTagName("modal")[0]
+	modal.classList.add("hidden")
 }

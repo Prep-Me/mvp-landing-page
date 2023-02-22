@@ -33,11 +33,23 @@
 </head>
 <body>
 
+	<modal class="hidden">
+		
+		<p>Join the Waitlist</p>
+		<p>Hey! Thanks for your interest, but we're not ready yet. Sign up to get notified when the app is ready.</p>
+
+		<div class="email-form">
+			<input type="text" autocomplete="off" placeholder="Email" id="hero-email">
+			<button class="hero-button">Get Started &#x2794</button>
+		</div>
+
+	</modal>
+
 	<nav>
 		<img src="images/logo.png" alt="Prep Me Logo">
 		<a href="#pricing">Pricing</a>
 		<a href="/contact">Contact</a>
-		<a href="/waitlist">Log In</a>
+		<a href="javascript:showModal()">Log In</a>
 	</nav>
 
 	<main>
@@ -47,7 +59,7 @@
 
 			<div class="email-form">
 				<input type="text" autocomplete="off" placeholder="Email" id="hero-email">
-				<button id="hero-button">Get Started &#x2794</button>
+				<button class="hero-button">Get Started &#x2794</button>
 			</div>
 
 			<div class="img-container"><img src="images/page cluster back.png" alt="App Page Cluster"><img src="images/page cluster front.png" alt="App Page Cluster" class="front"></div>
@@ -95,7 +107,7 @@
 					<li>Cancel at any time</li>
 					<li>Up to 10 colleges</li>
 				</ul>
-				<button>Try for Free</button>
+				<button onclick="showModal()">Try for Free</button>
 			</div>
 
 			<div class="price-card">
@@ -106,7 +118,7 @@
 					<li>Access for 1 full application season</li>
 					<li>Up to 10 colleges</li>
 				</ul>
-				<button>Get Started</button>
+				<button onclick="showModal()">Get Started</button>
 			</div>
 
 			<div class="price-card">
@@ -117,7 +129,7 @@
 					<li>Access for 1 full application season</li>
 					<li>Unlimited colleges</li>
 				</ul>
-				<button>Get Started</button>
+				<button onclick="showModal()">Get Started</button>
 			</div>
 		</div>
 

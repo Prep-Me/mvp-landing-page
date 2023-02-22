@@ -7,7 +7,7 @@
 	background: linear-gradient(282.93deg, #BCD7FF 28.32%, #E1CAFF 84.28%);
 	
 	display: grid;
-	gap: 10px;
+	gap: 15px;
 	justify-items: center;
 }
 
@@ -26,14 +26,14 @@
 	max-width: 640px;
 }
 
-.hero .email-form {
+.email-form {
 	display: grid;
 	grid-template-columns: minmax(min-content, 300px) auto;
 	gap: 30px;
 	margin: 50px;
 }
 
-.hero .email-form input, .hero .email-form button {
+.email-form input, .email-form button {
 	font-weight: bold;
 	font-size: 18px;
 	padding: 10px 14px;
@@ -44,28 +44,28 @@
 	background-color: white;
 }
 
-.hero .email-form input {
+.email-form input {
 	width: calc(100% - 8px * 2);
 }
 
-.hero .email-form input:focus {
+.email-form input:focus {
 	outline: none;
 	box-shadow: 0px 0px 10px rgba(60, 138, 255, 0.5);
 }
 
-.hero .email-form input.invalid {
+.email-form input.invalid {
 	box-shadow: 0px 0px 10px rgba(255, 0, 0, 1);
 }
 
-.hero .email-form input:disabled {
+.email-form input:disabled {
 	filter: brightness(0.8);
 }
 
-.hero .email-form input::placeholder {
+.email-form input::placeholder {
 	color: rgb(185, 185, 185);
 }
 
-.hero .email-form button {
+.email-form button {
 	background-color: rgba(60, 138, 255, 1);
 	color: white;
 	padding-left: 30px;
@@ -73,12 +73,12 @@
 	transition: 0.1s linear;
 }
 
-.hero .email-form button:hover {
+.email-form button:hover {
 	cursor: pointer;
 	filter: brightness(0.9);
 }
 
-.hero .email-form button:disabled {
+.email-form button:disabled {
 	filter: brightness(0.7);
 }
 
@@ -124,7 +124,7 @@
 		transform: scale(var(--scale)) translateY(calc(var(--offset) - 40px));
 	}
 
-	.hero .email-form button {
+	.email-form button {
 		padding: 10px;
 	}
 
@@ -380,7 +380,7 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	#pricing .price-card:nth-child(3) {
+	#pricing .price-card:nth-child(4) {
 		display: none;
 	}
 }
@@ -404,4 +404,79 @@
 	#pricing .price-card:nth-child(3) {
 		display: block;
 	}
+}
+
+modal::before {
+	content: "";
+	position: absolute;
+	top: -100vh;
+	left: -100vw;
+	width: 200vw;
+	height: 200vh;
+	z-index: -999;
+	backdrop-filter: brightness(0.8) blur(3px);
+}
+
+modal::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 15px;
+	background-color: white;
+	z-index: -998;
+}
+
+modal::before, modal::after, modal * {
+	transition: opacity 0.3s linear;
+}
+
+modal.hidden {
+	pointer-events: none;
+}
+
+modal.hidden::before, modal.hidden::after, modal.hidden *{
+	opacity: 0;
+}
+
+modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	padding: 10px 30px;
+	padding-top: 20px;
+	max-width: 350px;
+	display: grid;
+	gap: 10px;
+	justify-content: stretch;
+}
+
+modal p {
+	text-align: center;
+}
+
+modal p:nth-child(1) {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+modal p:nth-child(2) {
+	font-size: 20px;
+}
+
+modal .email-form {
+	margin: 15px;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	gap: 10px;
+}
+
+modal .email-form input {
+	width: unset;
+}
+
+modal .email-form button {
+	width: unset;
 }
