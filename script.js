@@ -89,3 +89,5 @@ function hideModal() {
 	const modal = document.getElementsByTagName("modal")[0]
 	modal.classList.add("hidden")
 }
+
+document.body.classList.remove("no-transition")

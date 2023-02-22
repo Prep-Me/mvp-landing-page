@@ -5,6 +5,10 @@
 	scroll-behavior: smooth;
 }
 
+.no-transition * {
+	transition: none !important;
+}
+
 /* Scrollbar */
 
 *::-webkit-scrollbar {
