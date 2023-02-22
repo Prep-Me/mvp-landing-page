@@ -149,6 +149,7 @@
 	grid-template-areas: 'card1 card2';
 	column-gap: 40px;
 	margin-top: 20px;
+	justify-items: center;
 }
 
 .marketing-1 .arrow {
@@ -188,10 +189,19 @@
 	background: white;
 	border-radius: 10px;
 	box-shadow: 0px 0px 20px rgba(60, 138, 255, 0.3);
-	padding: 25px;
+	padding: 25px 30px;
+	min-width: min-content;
+	width: calc(100% - 30px*2);
+	max-width: 400px;
+}
 
-	/* TEMP */
-	min-height: 300px;
+.marketing-1 .card-container .card p.card-text {
+	font-size: 18px;
+	margin: 10px 0px;
+}
+
+.marketing-1 .card-container .card img {
+	width: calc(100% - 10px*2);
 }
 
 .marketing-1 .card-container .card .card-title {
@@ -211,7 +221,7 @@
 
 	.marketing-1 .card-container {
 		display: block;
-		height: 340px;
+		height: 275px;
 		position: relative;
 		transition: transform 0.8s;
 		transform-style: preserve-3d;
@@ -222,7 +232,7 @@
 	}
 
 	.marketing-1 .card-container .card {
-		width: calc(100% - 2*25px);
+		width: calc(100% - 2*35px);
 		text-align: center;
 		-webkit-backface-visibility: hidden;
   	backface-visibility: hidden;
@@ -230,11 +240,14 @@
 
 	.marketing-1 .card-container .card.front {
 		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 
 	.marketing-1 .card-container .card.back {
 		position: absolute;
-		transform: rotateY(180deg);
+		left: 50%;
+		transform: translateX(-50%) rotateY(180deg);
 	}
 }
 
