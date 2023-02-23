@@ -15,6 +15,8 @@ function post(url, data) {
 	xhr.setRequestHeader('Content-Type', 'application/json')
 	xhr.setRequestHeader("Accept", "application/json")
 	xhr.send(JSON.stringify(data))
+
+	localStorage.setItem("prepme-formsubmitted", "Yes")
 }
 
 function validateEmail(email) {
@@ -30,6 +32,11 @@ Array.from(document.getElementsByClassName("email-form")).map(el => {
 	const button = el.children[1]
 
 	button.addEventListener("click", () => {
+		const submitted = localStorage.getItem("prepme-formsubmitted")
+		if (submitted != null) {
+			return
+		}
+
 		const email = emailInput.value
 
 		if (!validateEmail(email)) {
@@ -82,12 +89,18 @@ for (const arrowButton of document.getElementsByClassName("arrow")) {
 
 function showModal() {
 	const modal = document.getElementsByTagName("modal")[0]
+	const background = document.getElementById("modal-background")
 	modal.classList.remove("hidden")
+	background.classList.remove("hidden")
+
+	background.addEventListener("click", hideModal)
 }
 
 function hideModal() {
 	const modal = document.getElementsByTagName("modal")[0]
+	const background = document.getElementById("modal-background")
 	modal.classList.add("hidden")
+	background.classList.add("hidden")
 }
 
 document.body.classList.remove("no-transition")
