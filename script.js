@@ -33,14 +33,24 @@ Array.from(document.getElementsByClassName("email-form")).map(el => {
 
 	button.addEventListener("click", () => {
 		const submitted = localStorage.getItem("prepme-formsubmitted")
-		if (submitted != null) {
-			return
-		}
-
 		const email = emailInput.value
 
-		if (!validateEmail(email)) {
+		if ((submitted == null) || (!validateEmail(email))) {
 			emailInput.classList.add("invalid")
+
+			emailInput.animate(
+				[
+					{ transform: 'translateX(0px)'},
+					{ transform: 'translateX(-5px)'},
+					{ transform: 'translateX(0px)'},
+					{ transform: 'translateX(5px)'},
+					{ transform: 'translateX(0px)'},
+				], {
+					duration: 100,
+					iterations: 2
+				}
+			)
+
 			const listener = () => {
 				emailInput.classList.remove("invalid")
 				emailInput.removeEventListener("change", listener)
