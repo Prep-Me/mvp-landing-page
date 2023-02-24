@@ -35,7 +35,7 @@ nav {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 999;
+	z-index: 1;
 	width: min(calc(100vw - 20px*2), 1000px);
 	height: min-content;
 
