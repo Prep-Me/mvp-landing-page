@@ -103,4 +103,7 @@ function hideModal() {
 	background.classList.add("hidden")
 }
 
-document.body.classList.remove("no-transition")
+// Prevent Modal Flash
+window.requestAnimationFrame(() => {
+	document.body.classList.remove("no-transition")
+})
