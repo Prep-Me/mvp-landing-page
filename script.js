@@ -13,10 +13,10 @@ function post(url, data) {
 
 	xhr.open('POST', url, true)
 	xhr.setRequestHeader('Content-Type', 'application/json')
-	xhr.setRequestHeader("Accept", "application/json")
+	xhr.setRequestHeader("Accept", "applicatison/json")
 	xhr.send(JSON.stringify(data))
 
-	localStorage.setItem("prepme-formsubmitted", "Yes")
+	localStorage.setItem("prepme-formsubmitted", new Date().toString())
 }
 
 function validateEmail(email) {
@@ -35,7 +35,7 @@ Array.from(document.getElementsByClassName("email-form")).map(el => {
 		const submitted = localStorage.getItem("prepme-formsubmitted")
 		const email = emailInput.value
 
-		if ((submitted == null) || (!validateEmail(email))) {
+		if ((new Date(submitted) == null) || (new Date() - new Date(submitted) < 1000*60*60*24) || (!validateEmail(email))) {
 			emailInput.classList.add("invalid")
 
 			emailInput.animate(
