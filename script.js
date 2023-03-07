@@ -113,6 +113,50 @@ function hideModal() {
 	background.classList.add("hidden")
 }
 
+// Observer constants
+const thresholds = []
+for (let i = 0; i <= 1; i += 0.1) {
+	thresholds.push(i)
+}
+
+// Add fade-in observer
+const fadeIn = document.getElementsByClassName("fade-in")
+const fadeObserverCallback = function(entries) {
+	entries.forEach(entry => {
+		console.log(entry.intersectionRatio)
+		if (entry.intersectionRatio > 0.8) {
+			entry.target.classList.add('faded-in')
+		} else if (entry.intersectionRatio < 0.4) {
+			entry.target.classList.remove('faded-in')
+		}
+	})
+}
+
+const fadeObserver = new IntersectionObserver(fadeObserverCallback, {"threshold": thresholds})
+
+for (const el of fadeIn) {
+	fadeObserver.observe(el)
+}
+
+// Add slide-fade-in observer
+const slideFadeIn = document.getElementsByClassName("slide-fade-in")
+const slideFadeObserverCallback = function(entries) {
+	entries.forEach(entry => {
+		console.log(entry.intersectionRatio)
+		if (entry.intersectionRatio > 0.3) {
+			entry.target.classList.add('slided-faded-in')
+		} else if (entry.intersectionRatio < 0.3) {
+			entry.target.classList.remove('slided-faded-in')
+		}
+	})
+}
+
+const slideFadeObserver = new IntersectionObserver(slideFadeObserverCallback, {"threshold": thresholds})
+
+for (const el of slideFadeIn) {
+	slideFadeObserver.observe(el)
+}
+
 // Prevent Modal Flash
 window.requestAnimationFrame(() => {
 	document.body.classList.remove("no-transition")
