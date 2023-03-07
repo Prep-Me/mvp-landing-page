@@ -136,29 +136,31 @@ footer p.copy {
 }
 
 /* Fade in */
-.fade-in {
-	transition: 0.75s;
-	opacity: 0;
-}
+@media screen and (min-width: 850px) {
+	.fade-in {
+		transition: 0.75s;
+		opacity: 0;
+	}
 
-.fade-in.faded-in {
-	opacity: 1;
+	.fade-in.faded-in {
+		opacity: 1;
+	}
 }
 
 /* Slide and Fade in */
-.slide-fade-in {
-	counter-increment: slide-fade;
-	transition: 0.5s;
-	transform: translateY(50%);
-	opacity: 0;
-}
-
-.slide-fade-in.slided-faded-in {
-	opacity: 1;
-	transform: translateY(0px);
-}
-
 @media screen and (min-width: 850px) {
+	.slide-fade-in {
+		counter-increment: slide-fade;
+		transition: 0.5s;
+		transform: translateY(50%);
+		opacity: 0;
+	}
+	
+	.slide-fade-in.slided-faded-in {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+
 	.slide-fade-in:nth-child(1) {
 		transition-delay: 0s;
 	}
