@@ -161,3 +161,7 @@ for (const el of slideFadeIn) {
 window.requestAnimationFrame(() => {
 	document.body.classList.remove("no-transition")
 })
+
+if (window.location.search == "?email-campaign") {
+	showModal()
+}
