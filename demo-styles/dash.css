@@ -1,0 +1,68 @@
+#dash {
+	display: grid;
+	grid-template-rows: min-content min-content auto;
+	gap: 40rem;
+}
+
+#dash-row-2, #dash-row-3 {
+	padding: 0rem 20rem;
+	display: grid;
+	grid-template-columns: repeat(2, calc(50% - 20rem));
+	gap: 50rem;
+}
+
+.to-do {
+	display: grid;
+	margin-bottom: 15rem;
+	gap: 15rem;
+	grid-template-columns: min-content auto;
+}
+
+.to-do .button {
+	padding: 5rem;
+}
+
+.to-do .button img {
+	width: 40rem;
+}
+
+.to-do .gray-box {
+	display: grid;
+	align-items: center;
+	font-size: 24rem;
+}
+
+#dash-row-3 .section:nth-child(2) {
+	display: grid;
+	grid-template-rows: min-content auto;
+}
+
+#application-deadlines {
+	display: grid;
+	gap: 10rem;
+	padding: 20rem;
+	font-size: 24rem;
+	align-items: start;
+	align-content: start;
+}
+
+#application-deadlines .application {
+	display: grid;
+	gap: 40rem;
+	width: 100%;
+	grid-template-columns: auto max-content;
+}
+
+#application-deadlines .application .college {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+#application-deadlines .application .deadline {
+	font-weight: bold;
+}
+
+#application-deadlines .application .urgent {
+	color: red;
+}

@@ -1,0 +1,128 @@
+#schools {
+	display: grid;
+	gap: 30rem;
+	grid-template-rows: min-content min-content;
+	align-content: start;
+}
+
+#schools .link-button {
+	display: grid;
+	grid-template-columns: min-content auto;
+	align-items: center;
+	background-color: #f7f7f7;
+	border-radius: 8rem;
+	padding: 5rem 15rem;
+	font-size: 24rem;
+	font-weight: bold;
+	color: #515151;
+	gap: 15rem;
+	text-align: center;
+}
+
+#schools .link-button img {
+	width: 40rem;
+}
+
+#top-choices {
+	position: relative;
+	display: grid;
+	grid-template-rows: min-content auto;
+	gap: 20rem;
+}
+
+#top-choices .key {
+	position: absolute;
+	top: 10rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: grid;
+	gap: 15rem;
+	grid-template-columns: repeat(2, max-content);
+}
+
+#top-choices .key div {
+	font-size: 18rem;
+	padding: 3rem 15rem;
+	border-radius: 8rem;
+	font-weight: bold;
+}
+
+#top-choices .key div:nth-child(1) {
+	background-color: #3b8aff;
+}
+
+#top-choices .key div:nth-child(2) {
+	background-color: #98c1ff;
+}
+
+#top-choices .body {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto min-content;
+	grid-template-areas:
+		'a a b b'
+		'c d e f';
+	gap: 20rem;
+}
+
+#top-choices .body .gray-box {
+	padding: 20rem;
+	display: grid;
+	gap: 10rem;
+	align-items: start;
+	align-content: start;
+}
+
+#top-choices .body .gray-box .title {
+	font-size: 26rem;
+}
+
+#top-choices .body .gray-box p {
+	font-size: 24rem;
+}
+
+#top-choices .body .gray-box .scale {
+	display: grid;
+	grid-template-columns: 70rem auto 70rem;
+	text-align: center;
+	margin-bottom: 30rem;
+}
+
+#top-choices .body .gray-box .multi-bar, #top-choices .body .gray-box .multi-bar * {
+	height: 30rem;
+	border-radius: 8rem;
+}
+
+#college-fit {
+	display: grid;
+	grid-template-areas:
+		'a a a a'
+		'b c d e'
+		'f g h i'
+		'j k l m'
+		'n o p q';
+	grid-template-columns: auto 120rem max-content	max-content;
+	gap: 15rem;
+	font-size: 24rem;
+}
+
+#college-fit div {
+	background-color: #f7f7f7;
+	padding: 5rem 15rem;
+	border-radius: 8rem;
+	height: calc(100% - 10rem);
+	display: grid;
+	align-items: center;
+}
+
+#college-fit div.fit {
+	text-align: center;
+}
+
+#college-fit .link-button.regular {
+	grid-template-columns: max-content;
+}
+
+#college-fit .title {
+	grid-area: a;
+}

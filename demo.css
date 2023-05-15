@@ -1,0 +1,232 @@
+:root {
+	--root-font-size: 1px;
+	font-size: var(--root-font-size);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	-webkit-tap-highlight-color: transparent;
+}
+
+page > div.faded-out {
+	opacity: 0;
+}
+
+page > div {
+	transition: opacity 0.1s linear;
+	opacity: 1;
+}
+
+page > div.no-trans {
+	transition: none !important;
+}
+
+#bruh {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 999;
+	user-select: none;
+	opacity: 1;
+	transition: opacity 0.3s ease;
+}
+
+#bruh .box {
+	background-color: #FFFFFF;
+	font-size: 20rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 30rem;
+	border-radius: 10rem;
+	box-shadow: 0rem 0rem 20rem rgba(0, 0, 0, 0.4);
+	max-width: 400rem;
+	text-align: center;
+}
+
+#bruh .box .title {
+	font-size: 26rem;
+	font-weight: bold;
+	margin-bottom: 10rem;
+}
+
+#bruh.hidden {
+	opacity: 0;
+	pointer-events: none;
+}
+
+#disclaimer {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 3rem;
+	font-size: 16rem;
+	background-color: white;
+	user-select: none;
+	z-index: 9999;
+}
+
+html, body {
+	/* overflow: hidden; */
+}
+
+body {
+	display: grid;
+	grid-template-columns: min-content auto;
+	height: 100vh;
+	width: 100vw;
+	position: relative;
+}
+
+nav {
+	display: grid;
+	grid-template-rows: repeat(4, 41rem);
+	padding: 10rem 5rem;
+	padding-top: 20rem;
+	background-color: #F7F7F7;
+	width: max-content;
+	height: calc(100vh - 30rem);
+	row-gap: 10rem;
+}
+
+nav .nav-page {
+	display: grid;
+	grid-template-columns: min-content auto;
+	column-gap: 15rem;
+	align-items: center;
+	border-radius: 8rem;
+	padding: 0rem 10rem;
+	font-weight: bold;
+	color: #3E3E3E;
+	background-color: #F7F7F7;
+	cursor: pointer;
+	transition: filter 0.2s ease, color 0.1s linear, background-color 0.2s linear;
+}
+
+nav .nav-page .label {
+	font-size: 18rem;
+}
+
+@media (hover:hover) {
+	nav .nav-page:hover {
+		filter: brightness(0.95);
+	}
+}
+
+nav .nav-page.active {
+	background-color: #D5E6FF;
+	color: #3C8AFF;
+}
+
+nav .nav-page .img-container {
+	width: 35rem;
+	display: grid;
+	align-items: center;
+}
+
+nav .nav-page .img-container img {
+	width: 100%;
+	height: 100%;
+	filter: invert(21%) sepia(3%) saturate(37%) hue-rotate(314deg) brightness(92%) contrast(85%);
+}
+
+nav .nav-page.active .img-container img {
+	filter: invert(48%) sepia(25%) saturate(5434%) hue-rotate(200deg) brightness(100%) contrast(102%);
+}
+
+page {
+	width: calc(100% - 60rem);
+	height: calc(100% - 60rem);
+	padding: 30rem;
+}
+
+page.hidden {
+	display: none !important;
+}
+
+.section p.title {
+	font-weight: bold;
+	font-size: 26rem;
+	margin-bottom: 10rem;
+}
+
+.multi-bar {
+	--lb-right: 50%;
+	--lb-left: 0%;
+	--db-right: 30%;
+	--db-left: 0%;
+	background-color: #F7F7F7;
+	border-radius: 10rem;
+	height: 45rem;
+	box-shadow: 0rem 0rem 20rem rgba(0, 49, 105, 0.15);
+	position: relative;
+	overflow: hidden;
+}
+
+.multi-bar div {
+	transition: width 0.5s ease;
+}
+
+div.no-trans .multi-bar div {
+	transition: none !important;
+}
+
+div.faded-out .multi-bar div {
+	width: 0;
+}
+
+.multi-bar .light-blue-bar {
+	position: absolute;
+	border-radius: 10rem;
+	width: calc(var(--lb-right) - var(--lb-left));
+	height: 45rem;
+	left: var(--lb-left);
+	background-color: #98c1ff;
+}
+
+.multi-bar .dark-blue-bar {
+	position: absolute;
+	border-radius: 10rem;
+	width: calc(var(--db-right) - var(--db-left));
+	height: 45rem;
+	left: var(--db-left);
+	background-color: #3b8aff;
+}
+
+.multi-bar .label {
+	position: absolute;
+	top: 50%;
+	left: calc((var(--db-left) + var(--db-right))/2);
+	transform: translate(-50%, -50%);
+	color: white;
+	font-weight: bold;
+	font-size: 26rem;
+}
+
+.gray-box {
+	background-color: #F7F7F7;
+	box-shadow: 0rem 0rem 20rem rgba(0, 49, 105, 0.15);
+	border-radius: 10rem;
+	padding: 10rem;
+}
+
+.resource {
+	display: grid;
+	grid-template-columns: min-content auto max-content;
+	align-items: center;
+	gap: 10rem;
+}
+
+.resource > p {
+	font-size: 22rem
+}
+
+.resource > img {
+	width: 45rem;
+}

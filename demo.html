@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Prep Me Demo</title>
+
+	<link rel="shortcut icon" href="images/favicon.png" type="image/png">
+
+	<link rel="stylesheet" href="demo.css">
+	<link rel="stylesheet" href="demo-styles/dash.css">
+	<link rel="stylesheet" href="demo-styles/tasks.css">
+	<link rel="stylesheet" href="demo-styles/schools.css">
+	<link rel="stylesheet" href="demo-styles/resources.css">
+
+	<script defer src="demo.js"></script>
+</head>
+<body>
+	<p id="disclaimer">DEMO APP - v0.1 BETA</p>
+
+	<div id="bruh" class="hidden">
+		<div class="box">
+			<p class="title">Hey!</p>
+			<p>Thanks for trying out our demo. We can't open this resource because there is no application connected to this demo! <br><br>Click anywhere to close this alert.</p>
+			<br>
+		</div>
+	</div>
+
+	<nav>
+		<div class="nav-page active" data-page="dash">
+			<div class="img-container"><img src="demo-images/Dashboard.svg" alt="Dashboard"></div>
+			<p class="label">Dashboard</p>
+		</div>
+
+		<div class="nav-page" data-page="tasks">
+			<div class="img-container"><img src="demo-images/Todo.svg" alt="Tasks"></div>
+			<p class="label">Tasks</p>
+		</div>
+
+		<div class="nav-page" data-page="schools">
+			<div class="img-container"><img src="demo-images/Schools.svg" alt="Schools"></div>
+			<p class="label">Schools</p>
+		</div>
+
+		<div class="nav-page" data-page="resources">
+			<div class="img-container"><img src="demo-images/Resources.svg" alt="Resources"></div>
+			<p class="label">Resources</p>
+		</div>
+	</nav>
+
+	<page id="dash">
+		<div class="section dash-row-1">
+			<p class="title">Overall Progress</p>
+
+			<div class="multi-bar overall-bar" style="--lb-left: 0%; --lb-right: 0%; --db-left: 0%; --db-right: 0%;">
+				<div class="light-blue-bar"></div>
+				<div class="dark-blue-bar"></div>
+				<p class="label">56%</p>
+			</div>
+		</div>
+
+		<div id="dash-row-2">
+			<div class="section">
+				<p class="title">Standardized Testing</p>
+				<div class="multi-bar testing-bar" style="--lb-right: 0%; --db-right: 0%;">
+					<div class="light-blue-bar"></div>
+					<div class="dark-blue-bar"></div>
+					<p class="label">84%</p>
+				</div>
+			</div>
+
+			<div class="section">
+				<p class="title">Forms & Essays</p>
+				<div class="multi-bar essay-bar" style="--lb-right: 0%; --db-right: 0%;">
+					<div class="light-blue-bar"></div>
+					<div class="dark-blue-bar"></div>
+					<p class="label">35%</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="dash-row-3">
+			<div class="section">
+				<p class="title">To-Do</p>
+
+				<div class="to-do">
+					<div class="gray-box button" data-action="openResource">
+						<img src="demo-images/Link.svg">
+					</div>
+					<div class="gray-box">Common App Transcript</div>
+				</div>
+
+				<div class="to-do">
+					<div class="gray-box button" data-action="openResource">
+						<img src="demo-images/Link.svg">
+					</div>
+					<div class="gray-box">Supplemental Essays</div>
+				</div>
+
+				<div class="to-do">
+					<div class="gray-box button" data-action="openResource">
+						<img src="demo-images/Link.svg">
+					</div>
+					<div class="gray-box">Math Teacher Letter of Rec.</div>
+				</div>
+
+				<div class="to-do">
+					<div class="gray-box button" data-action="openResource">
+						<img src="demo-images/Link.svg">
+					</div>
+					<div class="gray-box">Personal Statement</div>
+				</div>
+			</div>
+
+			<div class="section">
+				<p class="title">Application Deadlines</p>
+
+				<div class="gray-box" id="application-deadlines">
+					<div class="application">
+						<p class="college">University of Chicago</p>
+						<p class="deadline urgent">14 days</p>
+					</div>
+
+					<div class="application">
+						<p class="college">University of Illinois Urbana-Champaign</p>
+						<p class="deadline urgent">14 days</p>
+					</div>
+
+					<div class="application">
+						<p class="college">University of Michigan</p>
+						<p class="deadline">26 days</p>
+					</div>
+
+					<div class="application">
+						<p class="college">Purdue University</p>
+						<p class="deadline">28 days</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</page>
+
+	<page id="tasks" class="hidden" style="font-size: 16rem;">
+		<div class="task">
+			<div class="gray-box main-task">
+				<p class="title">Supplemental Essays</p>
+
+				<div class="subsection">
+					<p class="title">Tasks</p>
+					<div class="minitask">
+						<div class="checkbox" data-checked="no" data-type="essays"></div>
+						<p class="desc">University of Chicago Essays</p>
+					</div>
+
+					<div class="minitask">
+						<div class="checkbox" data-checked="no" data-type="essays"></div>
+						<p class="desc">University of Michigan Essays</p>
+					</div>
+
+					<div class="minitask">
+						<div class="checkbox" data-checked="yes" data-type="essays"></div>
+						<p class="desc">Purdue University Essays</p>
+					</div>
+
+					<div class="minitask">
+						<div class="checkbox" data-checked="yes" data-type="essays"></div>
+						<p class="desc">UIUC Essays</p>
+					</div>
+				</div>
+
+				<div class="subsection">
+					<p class="title">Resources</p>
+
+					<div class="resource" data-action="openResource">
+						<img src="demo-images/Webinar.svg">
+						<p>Essay Writing Webinar</p>
+						<p>2 days</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="multi-bar essay-bar" style="--db-right: 0%;">
+				<div class="dark-blue-bar"></div>
+			</div>
+
+			<div class="gray-box button" data-action="openResource">
+				<img src="demo-images/Link.svg">
+			</div>
+
+			<div class="gray-box button" data-action="toggleAllEssays">
+				<img src="demo-images/Check.svg">
+			</div>
+		</div>
+
+		<div class="task">
+			<div class="gray-box main-task">
+				<p class="title">Standardized Testing</p>
+
+				<div class="subsection">
+					<p class="title">Tasks</p>
+					<div class="minitask">
+						<div class="checkbox" data-checked="no" data-type="testing"></div>
+						<p class="desc">Final Testing</p>
+					</div>
+
+					<div class="minitask">
+						<div class="checkbox" data-checked="yes" data-type="testing"></div>
+						<p class="desc">Practice Tests</p>
+					</div>
+
+					<div class="minitask">
+						<div class="checkbox" data-checked="yes" data-type="testing"></div>
+						<p class="desc">Guided Prep/Tutoring</p>
+					</div>
+
+					<div class="minitask">
+						<div class="checkbox" data-checked="yes" data-type="testing"></div>
+						<p class="desc">Take Trial Test</p>
+					</div>
+
+					<div class="minitask">
+						<div class="checkbox" data-checked="yes" data-type="testing"></div>
+						<p class="desc">Decide SAT or ACT</p>
+					</div>
+				</div>
+
+				<div class="subsection">
+					<p class="title">Resources</p>
+
+					<div class="resource" data-action="openResource">
+						<img src="demo-images/Test.svg">
+						<p>SAT Prep Course</p>
+					</div>
+
+					<div class="resource" data-action="openResource">
+						<img src="demo-images/Test.svg">
+						<p>SAT & ACT Practice Tests</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="multi-bar testing-bar" style="--db-right: 0%;">
+				<div class="dark-blue-bar"></div>
+			</div>
+
+			<div class="gray-box button" data-action="openResource">
+				<img src="demo-images/Link.svg">
+			</div>
+
+			<div class="gray-box button" data-action="toggleAllTesting">
+				<img src="demo-images/Check.svg">
+			</div>
+		</div>
+	</page>
+
+	<page id="schools" class="hidden">
+		<div class="section" id="top-choices">
+			<p class="title">Your Top Choices</p>
+			<div class="key">
+				<div>You</div>
+				<div>Top 75% Admitted</div>
+			</div>
+			<div class="body">
+				<div class="gray-box" style="grid-area: a;">
+					<p class="title">University of Chicago</p>
+
+					<p>GPA</p>
+					<div class="scale">
+						<p class="left">1.0</p>
+						<div class="multi-bar" style="--lb-left: 90%; --lb-right: 100%; --db-left: 92%; --db-right:97%;">
+							<div class="light-blue-bar"></div>
+							<div class="dark-blue-bar"></div>
+						</div>
+						<p class="right">4.0</p>
+					</div>
+					
+					<p>SAT</p>
+					<div class="scale">
+						<p class="left">400</p>
+						<div class="multi-bar" style="--lb-left: 80%; --lb-right: 100%; --db-left: 84%; --db-right:89%;">
+							<div class="light-blue-bar"></div>
+							<div class="dark-blue-bar"></div>
+						</div>
+						<p class="right">1600</p>
+					</div>
+				</div>
+				
+				<div class="link-button" style="grid-area: c;" data-action="openResource">
+					<img src="demo-images/Link.svg">
+					<p>Website</p>
+				</div>
+
+				<div class="link-button" style="grid-area: d;" data-action="openResource">
+					<img src="demo-images/Link.svg">
+					<p>Application</p>
+				</div>
+
+				<div class="gray-box" style="grid-area: b">
+					<p class="title">University of Illinois Urbana-Champaign</p>
+
+					<p>GPA</p>
+					<div class="scale">
+						<p class="left">1.0</p>
+						<div class="multi-bar" style="--lb-left: 76%; --lb-right: 100%; --db-left: 92%; --db-right:97%;">
+							<div class="light-blue-bar"></div>
+							<div class="dark-blue-bar"></div>
+						</div>
+						<p class="right">4.0</p>
+					</div>
+					
+					<p>SAT</p>
+					<div class="scale">
+						<p class="left">400</p>
+						<div class="multi-bar" style="--lb-left: 65%; --lb-right: 100%; --db-left: 84%; --db-right:89%;">
+							<div class="light-blue-bar"></div>
+							<div class="dark-blue-bar"></div>
+						</div>
+						<p class="right">1600</p>
+					</div>
+				</div>
+
+				<div class="link-button" style="grid-area: e;" data-action="openResource">
+					<img src="demo-images/Link.svg">
+					<p>Website</p>
+				</div>
+
+				<div class="link-button" style="grid-area: f;" data-action="openResource">
+					<img src="demo-images/Link.svg">
+					<p>Application</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section" id="college-fit">
+			<p class="title">College Fit</p>
+			<div>Northwestern University</div>
+			<div class="fit">92% Fit</div>
+			<div class="link-button" data-action="openResource">
+				<img src="demo-images/Link.svg">
+				<p>Explore</p>
+			</div>
+			<div class="link-button regular" data-action="openResource">
+				<p>Add to College List</p>
+			</div>
+
+			<div>University of California Berkeley</div>
+			<div class="fit">86% Fit</div>
+			<div class="link-button" data-action="openResource">
+				<img src="demo-images/Link.svg">
+				<p>Explore</p>
+			</div>
+			<div class="link-button regular" data-action="openResource">
+				<p>Add to College List</p>
+			</div>
+
+			<div>Columbia University</div>
+			<div class="fit">82% Fit</div>
+			<div class="link-button" data-action="openResource">
+				<img src="demo-images/Link.svg">
+				<p>Explore</p>
+			</div>
+			<div class="link-button regular" data-action="openResource">
+				<p>Add to College List</p>
+			</div>
+
+			<div>Carnegie Mellon University</div>
+			<div class="fit">77% Fit</div>
+			<div class="link-button" data-action="openResource">
+				<img src="demo-images/Link.svg">
+				<p>Explore</p>
+			</div>
+			<div class="link-button regular" data-action="openResource">
+				<p>Add to College List</p>
+			</div>
+		</div>
+	</page>
+
+	<page id="resources" class="hidden">
+		<div class="section events">
+			<p class="title">Virtual Events and Webinars</p>
+			
+			<div class="gray-box">
+				<div class="resource">
+					<img src="demo-images/Webinar.svg">
+					<p>About UChicago</p>
+					<div class="button blue" data-action="openResource">Join Now</div>
+				</div>
+
+				<div class="resource">
+					<img src="demo-images/Webinar.svg">
+					<p>Essay Writing Webinar</p>
+					<div class="button blue" data-action="openResource">3 Days</div>
+				</div>
+
+				<div class="resource">
+					<img src="demo-images/Webinar.svg">
+					<p>Application Workshop</p>
+					<div class="button gray" data-action="openResource">Register</div>
+				</div>
+
+				<div class="resource">
+					<img src="demo-images/Webinar.svg">
+					<p>College Fair</p>
+					<div class="button red" data-action="openResource">Canceled</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section guides">
+			<p class="title">Guides</p>
+
+			<div class="gray-box">
+				<div class="resource" data-action="openResource">
+					<img src="demo-images/Test.svg">
+					<p>Asking for Letters of Rec.</p>
+				</div>
+
+				<div class="resource" data-action="openResource">
+					<img src="demo-images/Test.svg">
+					<p>ACT vs SAT</p>
+				</div>
+
+				<div class="resource" data-action="openResource">
+					<img src="demo-images/Test.svg">
+					<p>College Research: Finding the Fit</p>
+				</div>
+
+				<div class="resource" data-action="openResource">
+					<img src="demo-images/Webinar.svg">
+					<p>Interpreting Admissions Data</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="section cal">
+			<p class="title">Calendar</p>
+
+			<div class="gray-box">
+				<div class="subsection">
+					<p class="title">Today</p>
+					<div class="resource" data-action="openResource">
+						<img src="demo-images/Webinar.svg">
+						<p>About UChicago</p>
+					</div>
+				</div>
+
+				<div class="subsection">
+					<p class="title">Thursday, May 18</p>
+					<div class="resource" data-action="openResource">
+						<img src="demo-images/Webinar.svg">
+						<p>Essay Writing Webinar</p>
+					</div>
+
+					<div class="resource" data-action="openResource">
+						<img src="demo-images/Test.svg">
+						<p>SAT Tutoring</p>
+					</div>
+				</div>
+
+				<div class="subsection">
+					<p class="title">Saturday, May 20</p>
+					<div class="resource" data-action="openResource">
+						<img src="demo-images/Test.svg">
+						<p>SAT Test Day</p>
+					</div>
+				</div>
+
+				<div class="subsection">
+					<p class="title">Wednesday, May 24</p>
+					<div class="resource" data-action="openResource">
+						<img src="demo-images/Thing.svg">
+						<p>Finish All Forms</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</page>
+
+	</page>
+</body>
+</html>
