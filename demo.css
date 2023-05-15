@@ -66,6 +66,7 @@ page > div.no-trans {
 	bottom: 0;
 	right: 0;
 	padding: 3rem;
+	padding-right: 10rem;
 	font-size: 16rem;
 	background-color: white;
 	user-select: none;
@@ -73,7 +74,7 @@ page > div.no-trans {
 }
 
 html, body {
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 
 body {
@@ -202,7 +203,7 @@ div.faded-out .multi-bar div {
 .multi-bar .label {
 	position: absolute;
 	top: 50%;
-	left: calc((var(--db-left) + var(--db-right))/2);
+	left: max(40rem, calc((var(--db-left) + var(--db-right))/2));
 	transform: translate(-50%, -50%);
 	color: white;
 	font-weight: bold;
