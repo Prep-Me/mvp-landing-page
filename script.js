@@ -123,7 +123,6 @@ for (let i = 0; i <= 1; i += 0.1) {
 const fadeIn = document.getElementsByClassName("fade-in")
 const fadeObserverCallback = function(entries) {
 	entries.forEach(entry => {
-		console.log(entry.intersectionRatio)
 		if (entry.intersectionRatio > 0.8) {
 			entry.target.classList.add('faded-in')
 		} else if (entry.intersectionRatio < 0.4) {
@@ -142,7 +141,6 @@ for (const el of fadeIn) {
 const slideFadeIn = document.getElementsByClassName("slide-fade-in")
 const slideFadeObserverCallback = function(entries) {
 	entries.forEach(entry => {
-		console.log(entry.intersectionRatio)
 		if (entry.intersectionRatio > 0.3) {
 			entry.target.classList.add('slided-faded-in')
 		} else if (entry.intersectionRatio < 0.3) {
