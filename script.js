@@ -59,12 +59,14 @@ Array.from(document.getElementsByClassName("email-form")).map(el => {
 			return
 		}
 
-		emailInput.value = "Added to waitlist"
+		emailInput.value = "Thank you!"
 		emailInput.setAttribute("disabled", true)
 		button.setAttribute("disabled", true)
 
 		const data = {email: email}
 		post(url, data)
+
+		window.open("https://app.prepme.us")
 
 		setTimeout(hideModal, 1000);
 	})
